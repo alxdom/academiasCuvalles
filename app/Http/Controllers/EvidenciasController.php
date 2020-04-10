@@ -88,4 +88,9 @@ class EvidenciasController extends Controller
         $request->file('archivo')->store('public');
         dd("subido y guardado");
     }
+
+    public function choice()
+    {
+        return view('evidencias.choice');
+    }
 }
