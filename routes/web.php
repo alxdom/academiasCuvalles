@@ -9,3 +9,7 @@ Route::get('/evidencias', 'EvidenciasController@index')->name('evidencias.index'
 Route::post('/evidencias','EvidenciasController@upload')->name('upload');//FUNCION PARA SUBIR EVIDENCIAS
 
 
+
+Auth::routes();
+
+
