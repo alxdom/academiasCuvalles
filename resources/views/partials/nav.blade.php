@@ -11,11 +11,10 @@
                 </div>
                 <div class="info">
 
-
                    <!-- info-user -->
-                   @yield('info-user')
-
-
+                   @include('partials.show_user')
+                    <!-- END-info-user -->
+        
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
@@ -26,18 +25,6 @@
                                 </a>
                             </li>
                             
-                            <li>
-                                <a class="profile-dropdown" href="{{ route('logout') }}"
-                                   
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    <span class="sidebar-normal">{{ __('Logout') }}</span>
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -58,13 +45,13 @@
                         <ul class="nav">
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ url('evidencias') }}">
-                                    <span class="sidebar-mini">S</span>
+                                    
                                     <span class="sidebar-normal">Subir</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ url('evidencias') }}">
-                                    <span class="sidebar-mini">C</span>
+                                    
                                     <span class="sidebar-normal">Consultar</span>
                                 </a>
                             </li>
@@ -84,13 +71,13 @@
                         <ul class="nav">
                             <li class="nav-item ">
                                 <a class="nav-link" href="./forms/regular.html">
-                                    <span class="sidebar-mini">Rf</span>
+                                    
                                     <span class="sidebar-normal">Subir</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="./forms/extended.html">
-                                    <span class="sidebar-mini">Ef</span>
+                                    
                                     <span class="sidebar-normal">Consultar</span>
                                 </a>
                             </li>
@@ -111,13 +98,13 @@
                         <ul class="nav">
                             <li class="nav-item ">
                                 <a class="nav-link" href="./tables/regular.html">
-                                    <span class="sidebar-mini">RT</span>
+                                    
                                     <span class="sidebar-normal">Subir</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="./tables/extended.html">
-                                    <span class="sidebar-mini">ET</span>
+                                    
                                     <span class="sidebar-normal">Consultar</span>
                                 </a>
                             </li>
@@ -137,13 +124,13 @@
                         <ul class="nav">
                             <li class="nav-item ">
                                 <a class="nav-link" href="./maps/google.html">
-                                    <span class="sidebar-mini">GM</span>
+                                    
                                     <span class="sidebar-normal">Detalle de evidencias</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="./maps/vector.html">
-                                    <span class="sidebar-mini">VM</span>
+                                    
                                     <span class="sidebar-normal">Detalle de programas y guías</span>
                                 </a>
                             </li>

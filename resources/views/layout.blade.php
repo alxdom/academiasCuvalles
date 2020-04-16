@@ -54,7 +54,7 @@
 
                                 @endguest
 
-                                @yield('content')
+                                    @yield('content')
 
                             </div>
                         </div>

@@ -3,10 +3,6 @@
 
 @section('content')
 
-
-
-
-
         <div class="col-md-7">
             <div class="card arriba">
                 <div class="card-header">{{ __('Registrarme') }}</div>
@@ -70,9 +66,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-
 
 
                         <div class="form-group row">

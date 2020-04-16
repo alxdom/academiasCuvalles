@@ -30,6 +30,4 @@
 
 
 
-@section('info-user')
-    @include('partials.show_user')
-@endsection
+
