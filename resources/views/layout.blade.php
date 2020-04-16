@@ -71,6 +71,7 @@
 
                 </div>
             </div>
+    </div>
 </body>
 
 
@@ -109,11 +110,11 @@
 <!--  DataTable Plugin -->
 <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
 <!--  Full Calendar   -->
-<script src="../assets/js/plugins/fullcalendar.min.js"></script>
+<script src="{{'js/plugins/fullcalendar.min.js'}}"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
+<script src="{{'js/light-bootstrap-dashboard.js?v=2.0.1'}}" type="text/javascript"></script>
 <!-- Light Dashboard DEMO methods, don't include it in your project! -->
-<script src="../assets/js/demo.js"></script>
+<script  src="{{'js/demo.js'}}"></script>
 <!--<script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
