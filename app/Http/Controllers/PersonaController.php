@@ -28,19 +28,22 @@ class PersonaController extends Controller
 
     public function iniciarSesion(LoginRequest $request){
         $respuesta = SiiauService::verifica_datos($request['codigo'],$request['pass']);
+        //dd($request['codigo'],$request['pass']);
         if($respuesta){
-            $persona = Persona::with('datosPersonales','datosPersonales.datosContacto','datosPersonales.carrera')->where('codigo',$request['codigo'])->first();
-             return view('layouts.profile',compact('persona'));
+             
+             /*return view('layouts.profile',compact('persona'));*/
+             return redirect()->route('home', compact('persona'));
+             
         }else{
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error','El correo o contraseña son incorrectos.');
         }
 
 
     }
 
-    public function mostrarFormulario(){
+    /*public function mostrarFormulario(){
         return view('layouts.formulario');
-    }
+    }*/
 
 
     public function store(Request $request)

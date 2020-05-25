@@ -18,7 +18,7 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a class="profile-dropdown" href="{{ route('logout') }}">
+                                <a class="profile-dropdown" href="#">
                                     
                                     <span class="sidebar-normal">Mi perfil</span>
 
