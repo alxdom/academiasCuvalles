@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use App\Materia;
+use App\Academia;
 
 class EvidenciasController extends Controller
 {
@@ -15,7 +16,8 @@ class EvidenciasController extends Controller
      */
     public function index()
     {
-        return view('evidencias.upload');
+
+        
     }
 
     /**
@@ -39,16 +41,8 @@ class EvidenciasController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
+   
 
     /**
      * Show the form for editing the specified resource.

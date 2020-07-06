@@ -137,7 +137,32 @@
                             
                         </ul>
                     </div>
-                
+
+                    
+
+
+
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{{ url('academiasAssign') }}">
+                            
+                            <p>
+                                Asignar academias
+                                
+                            </p>
+                        </a>
+                    </li>
+
+
+
+
+
+
+
             </ul>
         </div>
     </div>
