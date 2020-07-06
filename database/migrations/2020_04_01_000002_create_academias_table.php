@@ -23,7 +23,7 @@ class CreateAcademiasTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('academia', 150);
+            $table->string('nombre', 150);
         });
     }
 

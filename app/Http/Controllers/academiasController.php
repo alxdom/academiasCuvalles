@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Materia;
 use App\Academia;
+use App\Http\Requests\StorePostPost;
 class academiasController extends Controller
 {
     /**
@@ -65,6 +66,10 @@ class academiasController extends Controller
         //
     }
 
+
+
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -72,19 +77,18 @@ class academiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StorePostPost $request, Post $post)
     {
-        $materias = Materia::findOrFail($id);
         
-        $this->validate($request,[
-            'clave' => 'required',
-            'nombre' => 'required',
-            'carreras_id' => 'required',
-            'academias_id' => 'required',   
-        ]);
+        $post->update($request->validated());
+        dd($post);
+        return back();
+        
+        //$materias = Materia::findOrFail($id);
+        
         //$materias->update($request->only('academias_id'));
-        dd($request->all());
-        return redirect()->route('academias.index', $materias);
+        //dd($request->all());
+        //return redirect()->route('academias.index', $materias);
         //$materias->update($request->all());
         //return redirect('/academiasAssign');
         //$materias = Input::get('academias_id');
@@ -94,6 +98,15 @@ class academiasController extends Controller
         // return 'se completo el update de la materia '.$materias['nombre']. ' y su academia '.$materias['academias_id'];
         
     }
+
+
+
+
+
+
+
+
+
 
 
     /**

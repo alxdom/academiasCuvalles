@@ -30,7 +30,7 @@ class CreateUsuariosTable extends Migration
             $table->string('tel', 45);
             $table->string('foto', 150)->nullable();
             $table->string('modulo', 45);
-            $table->integer('cargos_id')->unsigned();
+            $table->integer('cargos_id')->unsigned()->nullable();
 
             $table->index(["cargos_id"], 'fk_usuarios_cargos1_idx');
 

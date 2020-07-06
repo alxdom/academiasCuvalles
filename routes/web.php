@@ -11,8 +11,8 @@ Route::post('/evidencias','EvidenciasController@upload')->name('upload');//FUNCI
 
 //RUTAS PARA ASIGNAR ACADEMIAS
 Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
-Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//INDEX
-Route::patch('/academiasAssign/{id}', 'academiasController@update')->name('academias.update');
+Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE
+Route::patch('/academiasAssign/{materias}', 'academiasController@update')->name('academias.update');//UPDATE
 
 
 //RUTAS PARA LOGIN
@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('login','PersonaController@showLoginForm')->name('login');
 Route::get('code','PersonaController@MostrarUsuario')->name('show_code');
 Route::post('formulario_datos','PersonaController@iniciarSesion')->name('validar_usuario');
+
 
 
 

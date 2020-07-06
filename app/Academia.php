@@ -12,7 +12,7 @@ class Academia extends Model
     protected $table = 'academias';
 
     protected $primaryKey = 'id';
-
+    public $timestamps = false;
     public function materia(){
         return $this->HashMany('App\Materia');
     }

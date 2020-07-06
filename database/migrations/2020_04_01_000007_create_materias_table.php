@@ -24,9 +24,9 @@ class CreateMateriasTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('crn');
             $table->string('clave', 45)->nullable();
-            $table->string('materia', 45)->nullable();
-            $table->integer('carreras_id')->unsigned();
-            $table->integer('academias_id')->unsigned();
+            $table->string('nombre', 45)->nullable();
+            $table->integer('carreras_id')->unsigned()->nullable();
+            $table->integer('academias_id')->unsigned()->nullable();
 
             $table->index(["carreras_id"], 'fk_materias_carreras1_idx');
 
