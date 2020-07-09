@@ -12,7 +12,8 @@ Route::post('/evidencias','EvidenciasController@upload')->name('upload');//FUNCI
 //RUTAS PARA ASIGNAR ACADEMIAS
 Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
 Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE
-Route::patch('/academiasAssign/{materias}', 'academiasController@update')->name('academias.update');//UPDATE
+Route::get('/academiasAssign/edit/{id}', 'academiasController@edit')->name('academias.edit');//EDIT
+Route::patch('/academiasAssign/edit/{id}', 'academiasController@update')->name('academias.update');//UPDATE
 
 
 //RUTAS PARA LOGIN

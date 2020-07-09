@@ -15,8 +15,9 @@ class academiasController extends Controller
     public function index()
     {
                 $materias = Materia::with('academia')->get();
+                
                 $academias = Academia::all();
-                return view('choice',compact('materias','academias')); 
+                return view('academiasAssign.choice',compact('materias','academias')); 
     }
 
     /**
@@ -63,12 +64,12 @@ class academiasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $materias = Materia::findOrFail($id);
+        $academias = Academia::all();
+        
+       return view('academiasAssign.edit', compact('materias','academias'));
+       
     }
-
-
-
-
 
     /**
      * Update the specified resource in storage.
@@ -77,17 +78,17 @@ class academiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StorePostPost $request, Post $post)
+    public function update(StorePostPost $request, $id)
     {
         
-        $post->update($request->validated());
-        dd($post);
+        //$materias = Materia::findOrFail($id);
+        dd('hola dd');
+        $materias->update($request->validated());
+        
         return back();
         
-        //$materias = Materia::findOrFail($id);
         
         //$materias->update($request->only('academias_id'));
-        //dd($request->all());
         //return redirect()->route('academias.index', $materias);
         //$materias->update($request->all());
         //return redirect('/academiasAssign');
@@ -101,14 +102,6 @@ class academiasController extends Controller
 
 
 
-
-
-
-
-
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -119,4 +112,5 @@ class academiasController extends Controller
     {
         //
     }
+
 }
