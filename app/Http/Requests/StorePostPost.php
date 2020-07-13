@@ -26,8 +26,8 @@ class StorePostPost extends FormRequest
         return [
             'clave' => 'required',
             'nombre' => 'required',
-            'carreras_id' => 'required',
-            'academias_id' => 'required',
+            'carreras_id' => 'required|exists:academias,id',
+            'academias_id' => 'required|exists:carreras,id',
         ];
     }
 }

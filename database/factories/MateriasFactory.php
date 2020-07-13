@@ -10,5 +10,7 @@ $factory->define(Materia::class, function (Faker $faker) {
         
         'clave' => $faker->numberBetween($min = 1000, $max = 2000), // 8567
         'nombre' => $faker->word,
+        
+        'carreras_id' => $faker->numberBetween($min = 1, $max = 5)
     ];
 });

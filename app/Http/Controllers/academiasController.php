@@ -38,9 +38,6 @@ class academiasController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        //dd($id_academia);
-        //dd($request->input('academias_id'));
         Materia::create($request->all());
         return redirect('/academiasAssign');
     }
@@ -62,14 +59,21 @@ class academiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+
+
+    public function edit(Materia $materias, Academia $academias,$id)
     {
-        $materias = Materia::findOrFail($id);
         $academias = Academia::all();
+        $materias = Materia::findOrFail($id);
+        
         
        return view('academiasAssign.edit', compact('materias','academias'));
        
     }
+
+
+
 
     /**
      * Update the specified resource in storage.
@@ -78,26 +82,24 @@ class academiasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StorePostPost $request, $id)
+    public function update(Materia $materias, StorePostPost $request,$id)
     {
-        
-        //$materias = Materia::findOrFail($id);
-        dd('hola dd');
-        $materias->update($request->validated());
-        
-        return back();
-        
-        
-        //$materias->update($request->only('academias_id'));
-        //return redirect()->route('academias.index', $materias);
-        //$materias->update($request->all());
-        //return redirect('/academiasAssign');
-        //$materias = Input::get('academias_id');
-        //$request->only('academias_id');
-        //$data = $request->input('academias_id');
-        //$materias->update($data);
-        // return 'se completo el update de la materia '.$materias['nombre']. ' y su academia '.$materias['academias_id'];
-        
+
+        if ( $materias->findOrFail($id)->update($request->validated() ) ){
+            
+            return redirect('/academiasAssign');
+                //dd($materias->update( $request->all() ));
+                //return response()->json(['mensaje' => 'SI jala el update',
+                //$materias->find($id),200, $request->all()]);
+                
+
+         }else{
+                
+                return response()->json([401,'mensaje' => 'No jala el update',
+                $materias->find($id), $request->all()]); 
+         }
+                
+                
     }
 
 

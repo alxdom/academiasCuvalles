@@ -8,7 +8,7 @@ class Materia extends Model
 {
     protected $table = 'materias';
     protected $primaryKey = 'crn';
-    protected $fillable = ['clave, nombre, carreras_id, academias_id'];
+    protected $fillable = ['clave','nombre', 'carreras_id', 'academias_id'];
 
     public $timestamps = false;
 

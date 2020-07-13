@@ -10,11 +10,11 @@ Route::get('/evidencias', 'EvidenciasController@index')->name('evidencias.index'
 Route::post('/evidencias','EvidenciasController@upload')->name('upload');//FUNCION PARA SUBIR EVIDENCIAS
 
 //RUTAS PARA ASIGNAR ACADEMIAS
-Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
-Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE
-Route::get('/academiasAssign/edit/{id}', 'academiasController@edit')->name('academias.edit');//EDIT
-Route::patch('/academiasAssign/edit/{id}', 'academiasController@update')->name('academias.update');//UPDATE
-
+//Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
+//Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE
+//Route::get('/academiasAssign/{id}/edit', 'academiasController@edit')->name('academias.edit');//EDIT
+//Route::patch('/academiasAssign/{id}/edit', 'academiasController@update')->name('academias.update');//UPDATE
+Route::resource('academiasAssign', 'academiasController');
 
 //RUTAS PARA LOGIN
 Route::get('/', function () {

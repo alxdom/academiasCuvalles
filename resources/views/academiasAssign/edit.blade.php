@@ -16,85 +16,64 @@
                         
                         <thead>
                           <tr>
+                            <th>CRN</th>
+                            <th>Clave</th>
                             <th>Materia</th>
-                            <th>Academia</th>
+                            <th>Id Carrera</th>
+                            <th>Id Academia</th>
+                            <th>save</th>
                           </tr>
                         </thead>
                         
-                       
-                        <tbody>
-                          
-                          <tr>                      
+                     
+                          <tbody>
+                            <form action="{{ route('academiasAssign.update', $materias->crn) }}" method="POST">
+                              @method('PATCH') 
+                              @csrf
+                          <tr> 
                             <td>
-                                Español
-                            </td>
+                              {{$materias->crn}}
+                          </td>  
+
+                          <td>
+                            <input type="text" name="clave" id="clave" value="{{$materias->clave}}">
+                                
+                            </td>  
+
                             <td>
-                                  Informatica aplicada
-                                  {{--<form action="{{ route('academias.update', $materia) }}" method="POST">
-                                    
-                                  @method('PATCH') 
-                                  @csrf
-
-                                  <select class="form-control" name='academias_id' id='academias_id'>
-                                
-                                    <option value="">Seleccione la academia</option>
-
-                                        
-                                        @foreach ($academias as $academia)
-
-                                        <option value="{{$academia->id}}">
-                                        
-                                            {{$academia->nombre}}
-                        
-                                        </option>
-
-                                        @endforeach
-                                        
-                                  </select>
-
-                                <br>
-                                <input class="btn btn-primary" type="submit" value="ok">
-                                
-                              </form>--}}
-
+                              <input type="text" name="nombre" id="nombre" value="{{$materias->nombre}}">
+                              
                             </td>
                             
-                          </tr>
+                             <td>
+                              
+                              <input type="text" name="carreras_id" id="carreras_id" value="{{$materias->carreras_id}}">
+                            </td>
+
+                            <td>
+                              
+                                <input type="text" name="academias_id" id="academias_id" value="{{$materias->academias_id}}">
+                            </td>
+                            <td>
+                                <button type="submit" class="btn">Save</button>
+                            </td>
+                              
+
+                            </form>
+
+                          </tr> 
                         </tbody>
-                        
-                               
-                                  {{--<form action="{{ route('academias.update', $materia) }}" method="POST">
-                                    
-                                  @method('PATCH') 
-                                  @csrf
-
-                                  <input type="text" name="clave" id="clave" value="{{$materia->clave}}" hidden>
-                                  <input type="text" name="nombre" id="nombre" value="{{$materia->nombre}}" hidden>
-                                  <input type="text" name="carreras_id" id="carreras_id" value="{{$materia->carreras_id}}" hidden>
-                                  <select class="form-control" name='academias_id' id='academias_id'>
-                                
-                                    <option value="">Seleccione la academia</option>
-
-                                            @foreach ($academias as $academia)
-
-                                        <option value="{{$academia->id}}">
-                                        
-                                            {{$academia->nombre}}
-                        
-                                        </option>
-                                        @endforeach
-                                </select>
-
-                                <br>
-                                <input class="btn btn-primary" type="submit" value="ok">
-                                
-                              </form>--}}  
-                           
-                            
-                          
-                        
+                                             
                       </table>
+                        {{--<select name="academia_id" id="academia_id">
 
+                                    <option value="">Selecciona una academia</option>
+
+                                    @foreach ($academias as $academia)
+                                      <option value="1">{{$academia->nombre}}</option>
+                                    @endforeach
+                                    
+                                  </select>--}}
                 </div>
             </div>
         </div>
