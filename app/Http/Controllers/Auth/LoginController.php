@@ -21,7 +21,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use \Illuminate\Foundation\Auth\AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -62,15 +62,14 @@ class LoginController extends Controller
 
         ]);
 
-
         $fieldType = filter_var($request->codigo, FILTER_VALIDATE_EMAIL) ? 'email' : 'codigo';
 
         if (auth()->attempt(array($fieldType => $input['codigo'], 'password' => $input['password']))) {
 
-            return redirect()->route('login');
+            return redirect()->route('home');
 
         }else {
-            return redirect()->route('home')->with('error','El correo o contraseña son incorrectos.');
+            return redirect()->route('/')->with('error','El correo o contraseña son incorrectos.');
         }
 
     }

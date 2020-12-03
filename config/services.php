@@ -19,6 +19,13 @@ return [
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
+    'siiau' => [
+        'base_uri' => env('SIIAU_BASE_URI'),
+        'client_id' => env('SIIAU_CLIENT_ID'),
+        'client_secret' => env('SIIAU_CLIENT_SECRET'),
+        'password_client_id' => env('SIIAU_PASSWORD_CLIENT_ID'),
+        'password_client_secret' => env('SIIAU_PASSWORD_CLIENT_SECRET'),
+    ],
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),

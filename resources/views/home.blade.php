@@ -23,9 +23,9 @@
 <div class="container">
     <div class="col-12">
         <div class="jumbotron back-jumbo">
-          </div>
-          </div>
+        </div>
     </div>
+</div>
 @endsection
 
 

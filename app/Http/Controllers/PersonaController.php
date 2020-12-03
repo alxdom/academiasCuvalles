@@ -2,72 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
 use App\Persona;
-use App\Services\SiiauService;
+use GuzzleHttp\Client;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Services\SiiauServices;
 use App\Http\Requests\LoginRequest;
 
 
 class PersonaController extends Controller
 {
-
-
-    public function index()
-    {
-        
-    }
-
-    public function create()
-    {
-
-    }
-
     public function showLoginForm(){
         return view('auth.login');
     }
-    
+
     public function iniciarSesion(LoginRequest $request){
-        $respuesta = SiiauService::verifica_datos($request['codigo'],$request['pass']);
-        
-        if($respuesta){
-            $persona = Persona::with('datosPersonales','datosPersonales.datosContacto','datosPersonales.carrera')->where('codigo',$request['codigo'])->first();
-            //dd($request['codigo'],$request['pass']);
-            //dd($request['codigo'],$request['pass'],$respuesta);
-            /*return view('layouts.profile',compact('persona'));*/
-             return redirect()->route('home', compact('persona'));
-             
-                  
-        }else{
+
+            $RegisterCodeUser = User::firstOrCreate(['codigo' => $request->codigo]);
+
+            $codigo = $request->codigo;
+            $pass = $request->pass;
+
+            $respuesta = $this->siiauServices->getAuthorizeResponse($codigo, $pass);
+            
+        if (property_exists($respuesta, 'authorized') == true) {
+            /*Auth::loginUsingId( $request->codigo );
+            session()->regenerate();*/
+            return redirect()->route('home');
+        }else {
             return redirect()->route('login')->with('error','El correo o contraseña son incorrectos.');
         }
     }
 
-    /*public function mostrarFormulario(){
-        return view('layouts.formulario');
+    /*public function log(LoginRequest $request){
+        $respuesta = SiiauService::verifica_datos($request['codigo'],$request['pass']);
+        if($respuesta){
+            $persona = Persona::with('datosPersonales','datosPersonales.datosContacto','datosPersonales.carrera')->where('codigo',$request['codigo'])->first();
+                return redirect()->route('home', compact('persona'));
+            }else{
+                return redirect()->route('login')->with('error','El correo o contraseña son incorrectos.');
+            }
     }*/
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show(Persona $persona)
-    {
-        //
-    }
-
-    public function edit(Persona $persona)
-    {
-        //
-    }
-
-    public function update(Request $request, Persona $persona)
-    {
-        //
-    }
-
-    public function destroy(Persona $persona)
-    {
-        //
-    }
 }

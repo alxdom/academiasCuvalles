@@ -3,78 +3,40 @@
 @section('content')
     
 <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="name">
-                  
-                </div>
-                <div class="col-12">
-                    
-                    <p>Estas son sus materias y la academia a la que pertenece:</p><br>
-                    
-                    
-                    <table class="table">
-                        
-                        <thead>
-                          <tr>
-                            <th>Crn</th>
-                            <th>Materia</th>
-                            <th>Academia</th>
-                            <th>-</th>
-                          </tr>
-                        </thead>
-                        
-                        @foreach ($materias as $materia)
-                        <tbody>
-                          <tr>
-                            <td>{{$materia->crn}}</td>
-                            <td>{{$materia->nombre}}</td>
-                            <td>
-                              @if (is_null($materia->academias_id))
-                
-                               <span style="color: red">Esta materia no tiene una academia asignada.</span>
-                               <td>
-                               {{--<a class="btn" href="{{ route('academiasAssign.edit', $materia->crn) }}">Editar</a>--}}
-
-                               <form action="{{ route('academiasAssign.update', $materia->crn) }}" method="POST">
-                                @method('PATCH') 
-                                @csrf
-
-                                  <input type="text" name="clave" id="clave" value="{{$materia->clave}}" hidden>
-                                  <input type="text" name="nombre" id="nombre" value="{{$materia->nombre}}" hidden>
-                                  <input type="text" name="carreras_id" id="carreras_id" value="{{$materia->carreras_id}}" hidden>
-                                  <select class="form-control col-md-12" name='academias_id' id='academias_id'>
-                                
-                                    <option value="">Seleccione la academia</option>
-
-                                            @foreach ($academias as $academia)
-
-                                              <option value="{{$academia->id}}">
-                                        
-                                                {{$academia->nombre}}
-                        
-                                        </option>
-                                        @endforeach
-                                </select>
-                                <button type="submit" class="btn col-md-12">ok</button>
-                                </form>
-                               </td>
-
-                            @else
-                                {{$materia->academia['nombre']}} 
-                                <td></td>
-                            @endif
-                            
-                            </td>
-                          </tr>
-                        </tbody>
-                        @endforeach
-                        
-                      </table>
-                  
-                </div>
-            </div>
-        </div>
+    <div class="card">
+        <div class="card-body">
+                  <div class="col-12">
+                      <h3>Bienvenidos a las Academias de Cuvalles</h3>
+                      <hr>
+                      
+                        <h5 class="text-center my-5"><small> Estas son sus materias y la academia a la que pertenece:</small></h5>
+                      
+                      
+                      
+                        <table class="table ">
+                            <thead class="bg-light">
+                              <tr>
+                                <th>NRC</th>
+                                <th>Código</th>
+                                <th>Clave</th>
+                                <th>Materia</th>
+                                <th>Academia</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @foreach ($materias as $materia)
+                              <tr>
+                                  <td><small>{{$materia->nrc}}</small></td> 
+                                  <td><small>{{$materia->codigo}}</small></td>
+                                  <td><small>{{$materia->clave}}</small></td>
+                                  <td><small>{{$materia->materia}}</small></td>
+                                  <td><small>Tecnologias</small></td>
+                              </tr>
+                              @endforeach
+                            </tbody>
+                          </table>
+                  </div>
+         </div>
     </div>
-
+</div>
 @endsection

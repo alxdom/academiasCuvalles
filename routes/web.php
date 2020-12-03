@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use GuzzleHttp\Client;
 
 //RUTA HOME
 Route::view('/home', 'home')->name('home');
@@ -15,11 +16,17 @@ Route::post('/evidencias','EvidenciasController@upload')->name('upload');//FUNCI
 //Route::get('/academiasAssign/{id}/edit', 'academiasController@edit')->name('academias.edit');//EDIT
 //Route::patch('/academiasAssign/{id}/edit', 'academiasController@update')->name('academias.update');//UPDATE
 Route::resource('academiasAssign', 'academiasController');
+Auth::routes(['register' => false, 'reset' => false]);
+
+
+
+
+//GUZZLE
+Route::get('logeo','academiasController@logeo')->name('logeo');
+
 
 //RUTAS PARA LOGIN
-Route::get('/', function () {
-    return view('auth.login');
-})->middleware('guest');
+Route::get('/', function () {return view('auth.login');})->middleware('guest');
 
 Route::get('login','PersonaController@showLoginForm')->name('login');
 Route::get('code','PersonaController@MostrarUsuario')->name('show_code');
