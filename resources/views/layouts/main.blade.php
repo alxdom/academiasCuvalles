@@ -18,6 +18,10 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body>
@@ -30,8 +34,6 @@
 
 
             <div class="main-panel">
-
-
 
             <!-- NAVBAR -->
             @include('partials.navbar')
@@ -65,6 +67,33 @@
     </div>
 </body>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+    
+    body{
+        background-color: #f8f9fa;
+        /* background-image: url(http://www.web.valles.udg.mx/sites/default/files/23157257_1909546689059928_8139742362001497134_o.jpg); */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .card{
+        -webkit-box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
+    }
+    .letra-titulo{
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .letra-titulo-2{
+        font-family: 'Merriweather', serif;
+    }
+    .letra-titulo-3{
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>
 
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>

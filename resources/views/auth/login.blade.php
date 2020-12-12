@@ -12,6 +12,10 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+
+    {{-- Fuentes letras --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet"/>
@@ -20,97 +24,128 @@
 </head>
 
 <body>
+<div class="loader_bg">
+    <div class="loader"></div>
+</div>
 
 
-    <div class="main-">
-        
-           
+    <div class="container-fluid">
 
-
-            <!-- NAVBAR -->
-            @include('partials.navbar')
-            <!-- FIN-NAVBAR -->
-                <!-- CONTENT -->
-                @yield('jumbo')
-
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-5 ml-auto">
-                                    <div class="card">
-                                        <div class="card-header">{{ __('Inicia sesión con tus credenciales de SIIAU') }}</div>
-                                            <div class="card-body">
-                                            <form method="POST" action="{{route('validar_usuario')}}">
-                                                @csrf
-                        
-                                                <div class="form-group row">
-                                                    <label for="codigo" class="col-md-4 col-form-label text-md-right">{{ __('Código') }}</label>
-                        
-                                                    <div class="col-md-6">
-                                                        
-                                                        <input id="codigo" name="codigo" type="text" class="form-control @error('codigo') is-invalid @enderror" name="codigo" value="{{ old('codigo') }}" required autocomplete="codigo" autofocus>
-                        
-                                                        @error('codigo')
-                                                        <div class="alert alert-primary" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                          </div>
-                                                        @enderror
-                        
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group row">
-                                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-                        
-                                                    <div class="col-md-6">
-                                                        <input placeholder="Contraseña de SIIAU" id="pass" name="pass" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                        
-                                                        @error('password')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                        
-                                                <div class="form-group row mb-0">
-                                                    <div class="col-md-8 offset-md-4">
-                                                        <button type="submit" class="btn btn-primary">
-                                                            {{ __('Entrar') }}
-                                                        </button>
-                        
-                                                        @if (Route::has('password.request'))
-                                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                                {{ __('¿Perdió su contraseña?') }}
-                                                            </a>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
+        <div class="row no-gutter">
+            <!-- The image half -->
+            <div class="col-md-6 d-none d-md-flex bg-image"></div>
+    
+    
+            <!-- The content half -->
+            <div class="col-md-6 bg-light">
+                <div class="login d-flex align-items-center py-5">
+    
+                    <!-- Demo content-->
+                    <div class="container">
+                        <div class="row">
+                            @include('partials.alertas')
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-2 letra">Academias Cuvalles</h3>
+                                <p class="text-muted mb-4 animate__animated animate__pulse animate__infinite">Inicia sesión con tus credenciales de ssiau.</p>
+                                <form method="POST" action="{{route('validar_usuario')}}">
+                                    @csrf
+                                    <div class="form-group mb-3">
+                                        <input id="codigo" name="codigo" type="text" placeholder="Código" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
-                                </div>
+                                    <div class="form-group mb-3">
+                                        <input type="password" id="pass" name="pass" placeholder="Contraseña" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Iniciar sesión</button>
+                                   
+                                </form>
                                 
-                                    @yield('content')
-
                             </div>
                         </div>
-                    </div>
-                    <!-- END-CONTENT -->
-
-
-                    <!-- FOOTER -->
-
-                @include('partials.footer')
-
-                <!-- END-FOOTER -->
-
-
+                        
+                    </div><!-- End -->
+    
                 </div>
-            </div>
+                
+            </div><!-- End -->
+            
+        </div>
+        
     </div>
+
 </body>
+
+<script>
+setTimeout(function(){
+    $('.loader_bg').fadeToggle();
+}, 1500);
+
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://mdl.cuvalles.udg.mx/pluginfile.php/1/theme_fordson/loginimage/1605724155/cuvalles_fondo4.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+.letra{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid slateblue;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+</style>
+
 
 
 <!--   Core JS Files   -->
@@ -161,3 +196,4 @@
 </script>-->
 
 </html>
+

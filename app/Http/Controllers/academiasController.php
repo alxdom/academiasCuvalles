@@ -7,21 +7,30 @@ use App\Academia;
 use GuzzleHttp\Client;
 use App\Http\Requests\StorePostPost;
 use DB;
+use Auth;
 
 
 use App\Services\SiiauServices;
 
 class academiasController extends Controller
 {
+
+
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = '2952399')
+    public function index()
     {
-        
+        //$id = Auth::user()->codigo;
+       
+        $id =  Auth::user()->codigo;
+        // $id = '2952399'
         $materias = $this->siiauServices->getMateriasPorProfesor($id);
+
+        
 
         //$encode = json_encode($materias , JSON_FORCE_OBJECT);
         //$decode = json_decode($encode, true);

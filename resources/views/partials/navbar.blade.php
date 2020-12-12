@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg colorBG">
     <div class="container-fluid">
         <div class="navbar-wrapper">
-            <a class="navbar-brand" href="/home">ACADEMIAS</a>
+            <a class="navbar-brand text-light" href="/home">Academias Cuvalles</a>
         </div>
         <ul class="navbar-nav ml-auto">
             
@@ -23,3 +23,9 @@
               </li>
     </div>
 </nav>
+
+<style>
+    .colorBG{
+        background-color: #1864ab;
+    }
+</style>
