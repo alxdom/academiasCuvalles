@@ -20,32 +20,12 @@ class PersonaController extends Controller
     }
 
     public function iniciarSesion(LoginRequest $request){
-        // $user = $request->all();
-
-        // $codigo = $request->codigo;
-        // $pass = $request->pass;
-
-        // $respuesta = $this->siiauServices->getAuthorizeResponse($codigo, $pass);
- 
-        // if (property_exists($respuesta, 'authorized') == true) {
-          
-        //     $RegisterCodeUser = User::firstOrCreate([
-        //         'codigo' => $request->codigo,
-        //     ]);
-        //     Auth::login($user, false);
-        //         return redirect()->route('home');
-
-        //     }else {
-
-        //         return redirect()->route('login')->with('error','El correo o contraseña son incorrectos.');
-
-        //     }
         $codigo = $request->codigo;
         $pass = $request->pass;
         $respuesta = $this->siiauServices->getAuthorizeResponse($codigo, $pass);
         $findUser = User::where('codigo', $codigo)->first();
         
-            if (property_exists($respuesta, 'authorized') == true) {
+            if (property_exists($respuesta, 'authorized')) {
                 if($findUser){
                     Auth::login($findUser);
                 }else{
@@ -53,7 +33,7 @@ class PersonaController extends Controller
                     $user->codigo = $codigo;
                     $user->pass = bcrypt($pass);
                     $user->save();
-                    Auth::login($codigo);
+                    Auth::login($user);
                 }
                 return redirect()->route('home');
         }else {

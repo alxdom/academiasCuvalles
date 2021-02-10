@@ -23,47 +23,28 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-
 <body>
-
 <!-- NAVEGADOR-ASIDE -->
-
-    @include('partials.nav')
-
+    @include('partials.nav_alter')
 <!-- FIN-NAVEGADOR-ASIDE -->
-
-
-            <div class="main-panel">
-
-            <!-- NAVBAR -->
-            @include('partials.navbar')
-            <!-- FIN-NAVBAR -->
-                <!-- CONTENT -->
+    <div class="main-panel">
+        <!-- NAVBAR -->
+        @include('partials.navbar')
+        <!-- FIN-NAVBAR -->
                 @yield('jumbo')
-
+                <!-- CONTENT -->
                 <div class="content">
                     <div class="container-fluid">
                         <div class="container">
                             <div class="row">
-                              
-
-                                    @yield('content')
-
+                                @yield('content')
                             </div>
                         </div>
                     </div>
                     <!-- END-CONTENT -->
-
-
-                    <!-- FOOTER -->
-
-                @include('partials.footer')
-
-                <!-- END-FOOTER -->
-
-
                 </div>
-            </div>
+                @include('partials.footer')
+        </div>
     </div>
 </body>
 

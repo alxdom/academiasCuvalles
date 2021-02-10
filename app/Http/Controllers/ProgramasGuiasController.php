@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Materia;
 use App\Academia;
 
-class EvidenciasController extends Controller
+class ProgramasGuiasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,20 +16,14 @@ class EvidenciasController extends Controller
      */
     public function index($id = '2952399', Request $request)
     {
-        //$id = Auth::user()->codigo;
-        //$id = '2952399'
-        // $id = '2236079'
-        // 2709139
-
         $materias = $this->siiauServices->getMateriasPorProfesor($id);
         
         $academias = Academia::all();
         
-
         $nombreAcademia = $request->get('buscarpor');
         $dbMaterias = Materia::where('academias_id', 'like', "%$nombreAcademia%")->get();
         
-        return view('evidencias.index')->with([
+        return view('guias.index')->with([
             'materias' => $materias,
             'academias' => $academias,
             'dbMaterias' => $dbMaterias,
@@ -57,8 +51,16 @@ class EvidenciasController extends Controller
         //
     }
 
-    
-   
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -92,37 +94,5 @@ class EvidenciasController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function ShowUploadEvidencias(Request $request){
-        
-        // return "link para subir: "public/evidencias/" . $request->idacademia . "/" . $request->idmateria . "/2020A" . "/" .$request->tipo; 
-        // $materiaID, $academiaID;
-        // $materias = $this->siiauServices->getMateriasPorProfesor($id);
-        
-        return view('evidencias.upload')->with([
-            'idmateria' => $request->idmateria,
-            'idacademia' => $request->idacademia,
-            'tipo' => $request->tipo,
-        ]); 
-        
-    }
-
-    public function uploadEvidencias(Request $request){
-
-        // $uploadUrl = "public/Evidencias/" . $request->academia . "/" . $request->idmateria . "/" . $request->ciclo . "/" . $request->tipo;
-        // $url = "storage/public/evidencias/" . $request->academia . "/" . $request->materia . "/" . $request->ciclo . "/" .$request->tipo; 
-
-        $url = $request->academia . "/" . $request->materia . "/" . $request->ciclo . "/" .$request->tipo; 
-
-        $request->file('archivo')->store($url);
-
-        return redirect()->back();
-    }
-
-    public function choice()
-    {
-        return view('evidencias.choice');
     }
 }

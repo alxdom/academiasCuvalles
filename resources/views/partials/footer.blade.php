@@ -28,7 +28,7 @@
                 <script>
                     document.write(new Date().getFullYear())
                 </script>
-                <a href="#inicio">Academias</a>, All Rights Reserved.
+                <a href="#inicio">Academias</a>, Todos los derechos reservados.
             </p>
         </nav>
     </div>

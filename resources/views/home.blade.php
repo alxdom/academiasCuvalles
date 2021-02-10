@@ -1,40 +1,60 @@
 @extends('layouts.main')
 @section('content')
 
-
-
-
 <div class="col-md-12">
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://mdl.cuvalles.udg.mx/pluginfile.php/1/theme_fordson/slide1image/1605724155/banner1.jpg" alt="Portada del sitio web">
+ 
+              </div>
+        </div>
+      </div>
+
 
     <div class="row">
         <div class="col-sm-12">
-            <div class="card">
-                <div class="card-body mx-auto bg-udg">
-                    <h1 class="letra-titulo-3 title-cuv p-2 rounded">Bienvenidos a las Academias de Cuvalles</h1>
+            <div class="card fondo">
+                <div class="card-body mx-auto">
+                    <h1 class=" p-2">Bienvenidos a las Academias de Cuvalles</h1>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-12 col-lg-8 col-12">
             <div class="card">
-                <div class="card-body align-self-center text-center">
-                    <p><b>NOTA Importante: </b></p>
-                    
-                    <p>¡Ya puedes subir los planes y guías del ciclo 2020A!</p>
-                    <br>
-                    <br>
-                    <br>
-                    
-                    <p class="text-muted">Si alguna materia no te aparece en el ciclo buscado, manda un correo 
-                        a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
-                        materias faltantes.</p>
+                {{-- <div class="card-body align-self-center text-center"> --}}
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <h2 class="">Nota Importante!</h2>
+                        {{-- <p><b>NOTA Importante: </b></p> --}}
+                        <p class="lead">¡Ya puedes subir los planes y guías del ciclo 2020A!</p>
+                        <hr class="">
+                        {{-- <p>¡Ya puedes subir los planes y guías del ciclo 2020A!</p> --}}
+                        <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                            a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                            materias faltantes.</p>
+                            <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                                a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                                materias faltantes.</p>
+                                <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                                    a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                                    materias faltantes.</p>
+                                    <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                                        a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                                        materias faltantes.</p>
+                        {{-- <p class="text-muted">Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                            a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                            materias faltantes.</p> --}}
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div <div class="col-sm-4">
+        <div <div class="col-sm-12 col-lg-4 col-12">
             <div class="card">
                 <div class="card-body">
                     <h4 class="align-self-center text-center">
@@ -46,14 +66,41 @@
                             </div>
                             Revisa ya tus materias
                     <h4> 
-                    <a class="btn btn-primary" href="#">Go</a>
+                    <a class="btn btn-primary" href="{{ url('academiasAssign') }}">Ir Ahora</a>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
 
+
+    <div class="row">
+        <div class="col-sm-12 col-lg-8 col-12">
+            <div class="card">
+                {{-- <div class="card-body align-self-center text-center"> --}}
+                
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <h2 class="">Nota Importante!</h2>
+                        {{-- <p><b>NOTA Importante: </b></p> --}}
+                        <p class="lead">¡Ya puedes subir los planes y guías del ciclo 2020A!</p>
+                        <hr class="">
+                        {{-- <p>¡Ya puedes subir los planes y guías del ciclo 2020A!</p> --}}
+                        <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                            a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                            materias faltantes.</p>
+                        {{-- <p class="text-muted">Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                            a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
+                            materias faltantes.</p> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
 
 <style>
 .bg-udg{
@@ -70,9 +117,10 @@
     background-color:#1864ab;
     color: white;
 }
-
-
-
+.fondo{
+    background-color:#1864ab;
+    color: white;
+}
 </style>
 @endsection
 
