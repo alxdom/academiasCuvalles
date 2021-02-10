@@ -13,12 +13,12 @@ Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload
 
 //RUTAS PARA GUÍAS
 Route::get('/programasyguias', 'ProgramasGuiasController@index')->name('guias.index');//INDEX
-// Route::get('/showevidencias', 'EvidenciasController@ShowUploadEvidencias')->name('evidencias.show');//INDEX
+Route::get('/showguias', 'ProgramasGuiasController@ShowUploadGuias')->name('guias.show');//INDEX
 // Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload');
 
 //RUTAS PARA ACTAS
 Route::get('/actas', 'ActasController@index')->name('actas.index');//INDEX
-// Route::get('/showevidencias', 'EvidenciasController@ShowUploadEvidencias')->name('evidencias.show');//INDEX
+Route::get('/showactas', 'ActasController@ShowUploadActas')->name('actas.show');//INDEX
 // Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload');
 
 //RUTAS PARA ASIGNAR ACADEMIAS

@@ -30,6 +30,40 @@ class ProgramasGuiasController extends Controller
         ]); 
     }
 
+    public function ShowUploadGuias(Request $request){
+        
+        // return "link para subir: "public/evidencias/" . $request->idacademia . "/" . $request->idmateria . "/2020A" . "/" .$request->tipo; 
+        // $materiaID, $academiaID;
+        // $materias = $this->siiauServices->getMateriasPorProfesor($id);
+        
+        return view('guias.upload')->with([
+            'idmateria' => $request->idmateria,
+            'idacademia' => $request->idacademia,
+            'tipo' => $request->tipo,
+        ]); 
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *

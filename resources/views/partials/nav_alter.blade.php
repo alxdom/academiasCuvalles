@@ -80,7 +80,7 @@
                       </svg>
                 </div>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#mapsExamples">
                         
                         <p>
@@ -104,7 +104,7 @@
                             </li>
                             
                         </ul>
-                    </div>
+                    </div> --}}
 
                     <li class="nav-item">
                         <a class="nav-link"  href="{{ url('academiasAssign') }}">
