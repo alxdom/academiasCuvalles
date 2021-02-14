@@ -43,10 +43,11 @@
                     <!-- Demo content-->
                     <div class="container">
                         <div class="row">
-                            @include('partials.alertas')
+                            
                             <div class="col-lg-10 col-xl-7 mx-auto">
                                 <h3 class="display-2 letra">Academias Cuvalles</h3>
                                 <p class="text-muted mb-4 animate__animated animate__pulse animate__infinite">Inicia sesión con tus credenciales de ssiau.</p>
+                                @include('partials.alertas')
                                 <form method="POST" action="{{route('validar_usuario')}}">
                                     @csrf
                                     <div class="form-group mb-3">

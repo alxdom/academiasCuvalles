@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client;
 
+
+
+Route::middleware(['auth'])->group(function () {
 //RUTA HOME
 Route::view('/home', 'home')->name('home');
 
@@ -21,29 +24,29 @@ Route::get('/actas', 'ActasController@index')->name('actas.index');//INDEX
 Route::get('/showactas', 'ActasController@ShowUploadActas')->name('actas.show');//INDEX
 // Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload');
 
+Route::resource('academiasAssign', 'academiasController');
+});
+
+
+
+
+//Generar link simbolico del storage
+Route::get('/generateLinkStorage', function () {
+    Artisan::call('storage:link');
+});
+//RUTAS PARA LOGIN
+Auth::routes(['register' => false, 'reset' => false]);
+Route::get('/', function () {return view('auth.login');})->middleware('guest');
+Route::get('login','PersonaController@showLoginForm')->name('login');
+Route::get('code','PersonaController@MostrarUsuario')->name('show_code');
+Route::post('formulario_datos','PersonaController@iniciarSesion')->name('validar_usuario');
+//GUZZLE
+Route::get('logeo','academiasController@logeo')->name('logeo');
 //RUTAS PARA ASIGNAR ACADEMIAS
 //Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
 //Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE
 //Route::get('/academiasAssign/{id}/edit', 'academiasController@edit')->name('academias.edit');//EDIT
 //Route::patch('/academiasAssign/{id}/edit', 'academiasController@update')->name('academias.update');//UPDATE
-Route::resource('academiasAssign', 'academiasController');
-Auth::routes(['register' => false, 'reset' => false]);
-
-
-//GUZZLE
-Route::get('logeo','academiasController@logeo')->name('logeo');
-
-
-//RUTAS PARA LOGIN
-Route::get('/', function () {return view('auth.login');})->middleware('guest');
-
-Route::get('login','PersonaController@showLoginForm')->name('login');
-Route::get('code','PersonaController@MostrarUsuario')->name('show_code');
-Route::post('formulario_datos','PersonaController@iniciarSesion')->name('validar_usuario');
-
-Route::get('/foo', function () {
-    Artisan::call('storage:link');
-});
 
 
 

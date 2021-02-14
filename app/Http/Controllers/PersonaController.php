@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Services\SiiauServices;
 use App\Http\Requests\LoginRequest;
+// use Illuminate\Http\Request;
 
 
 class PersonaController extends Controller
@@ -20,6 +21,13 @@ class PersonaController extends Controller
     }
 
     public function iniciarSesion(LoginRequest $request){
+
+        $request->validate([
+            'codigo' => 'required',
+            'pass' => 'required',
+          ]);
+
+
         $codigo = $request->codigo;
         $pass = $request->pass;
         $respuesta = $this->siiauServices->getAuthorizeResponse($codigo, $pass);
@@ -36,8 +44,9 @@ class PersonaController extends Controller
                     Auth::login($user);
                 }
                 return redirect()->route('home');
-        }else {
-            return redirect()->route('login')->with('error','El correo o contraseña son incorrectos.');
+            }else {
+                // return redirect()->route('login')->with('error','Tu código o contraseña son incorrectos.');
+                return redirect()->route('login');
         }
     }
 }
