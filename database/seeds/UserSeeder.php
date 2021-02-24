@@ -12,8 +12,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         App\User::create([
-            'codigo'      => '214332855',
-            'pass'     => bcrypt('alextintor'),
+            'codigo'      => 'insertar codigo de siiau',
+            'pass'     => bcrypt('insertar contraseña'),
         ]);
     }
 }
