@@ -16,7 +16,7 @@
                                 <th>Código</th>
                                 <th>Clave</th>
                                 <th>Materia</th>
-                                <th>Academia</th>
+                                <th>Acciones</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -32,7 +32,8 @@
                                         @if ($MATERIA->academias_id == null)
                                           <td><small><a href="{{ route('academiasAssign.edit', $MATERIA->crn )}}" type="button" class="btn btn-primary btn-sm">Asignar academia</a></small></td>
                                         @else
-                                          <td><small>{{$MATERIA->academia->nombre}}</small></td>
+                                          {{-- <td><small>{{$MATERIA->academia->nombre}}</small></td> --}}
+                                          <td><small><a href="{{ route('academiasAssign.edit', $MATERIA->crn )}}" type="button" class="btn btn-primary btn-sm">Asignar academia</a></small></td>
                                         @endif
                                       @endif
                                   @endforeach

@@ -40,7 +40,10 @@ class PersonaController extends Controller
                     $user = new User;
                     $user->codigo = $codigo;
                     $user->pass = bcrypt($pass);
+                    //Crear usuario
                     $user->save();
+                    //Asignar rol a usuario
+                    $user->assignRole('Academic');
                     Auth::login($user);
                 }
                 return redirect()->route('home');

@@ -25,6 +25,9 @@ Route::get('/showactas', 'ActasController@ShowUploadActas')->name('actas.show');
 // Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload');
 
 Route::resource('academiasAssign', 'academiasController');
+
+Route::resource('roles', 'RoleController');
+
 });
 
 
@@ -40,8 +43,9 @@ Route::get('/', function () {return view('auth.login');})->middleware('guest');
 Route::get('login','PersonaController@showLoginForm')->name('login');
 Route::get('code','PersonaController@MostrarUsuario')->name('show_code');
 Route::post('formulario_datos','PersonaController@iniciarSesion')->name('validar_usuario');
-//GUZZLE
-Route::get('logeo','academiasController@logeo')->name('logeo');
+
+
+//Route::get('logeo','academiasController@logeo')->name('logeo');
 //RUTAS PARA ASIGNAR ACADEMIAS
 //Route::get('/academiasAssign', 'academiasController@index')->name('academias.index');//INDEX
 //Route::post('/academiasAssign', 'academiasController@store')->name('academias.store');//STORE

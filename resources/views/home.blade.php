@@ -29,12 +29,11 @@
                 {{-- <div class="card-body align-self-center text-center"> --}}
                 <div class="card-body">
                     <div class="col-lg-12">
-                        <h2 class="">Nota Importante!</h2>
-                        {{-- <p><b>NOTA Importante: </b></p> --}}
-                        <p class="lead">¡Ya puedes subir los planes y guías del ciclo 2020A!</p>
-                        <hr class="">
+                        
+
+                        
                         {{-- <p>¡Ya puedes subir los planes y guías del ciclo 2020A!</p> --}}
-                        <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
+                        {{-- <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
                             a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
                             materias faltantes.</p>
                             <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
@@ -45,7 +44,19 @@
                                     materias faltantes.</p>
                                     <p>Si alguna materia no te aparece en el ciclo buscado, manda un correo 
                                         a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
-                                        materias faltantes.</p>
+                                        materias faltantes.</p> --}}
+                                        
+                                        @if(@Auth::user()->hasRole('Academic'))
+                                            <h2>Academico</h2>
+                                            <hr class="">
+                                            <p>Codigo: {{Auth::user()->codigo}}</p>
+                                        @else
+                                            <h2>SUPERADMIN</h2>
+                                            <hr class="">
+                                            <p>Codigo: {{Auth::user()->codigo}}</p>
+                                            
+                                        @endif
+                                        
                         {{-- <p class="text-muted">Si alguna materia no te aparece en el ciclo buscado, manda un correo 
                             a francisco.oliva@profesores.valles.udg.mx para poder dar de alta las 
                             materias faltantes.</p> --}}
