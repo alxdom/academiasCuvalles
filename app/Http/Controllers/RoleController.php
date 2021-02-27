@@ -11,6 +11,17 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
+
+    public function __construct(){
+
+        $this->middleware('permission:roles.create')->only(['create', 'store']);
+        $this->middleware('permission:roles.index')->only(['index']);
+        $this->middleware('permission:roles.edit')->only(['edit', 'update']);
+        // $this->middleware('permission:roles.show')->only(['show']);
+        $this->middleware('permission:roles.destroy')->only(['destroy']);
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,38 +32,6 @@ class RoleController extends Controller
         $users = User::all();
         
         return view ('roles.index', compact('users'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -89,14 +68,4 @@ class RoleController extends Controller
         return redirect(route('roles.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

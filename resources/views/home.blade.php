@@ -50,11 +50,14 @@
                                             <h2>Academico</h2>
                                             <hr class="">
                                             <p>Codigo: {{Auth::user()->codigo}}</p>
-                                        @else
-                                            <h2>SUPERADMIN</h2>
+                                        @elseif(@Auth::user()->hasRole('Admin'))
+                                            <h2>Presidente de Academia</h2>
                                             <hr class="">
                                             <p>Codigo: {{Auth::user()->codigo}}</p>
-                                            
+                                        @else
+                                            <h2>SuperAdmin</h2>
+                                            <hr class="">
+                                            <p>Codigo: {{Auth::user()->codigo}}</p>
                                         @endif
                                         
                         {{-- <p class="text-muted">Si alguna materia no te aparece en el ciclo buscado, manda un correo 

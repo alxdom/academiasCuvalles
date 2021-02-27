@@ -17,7 +17,7 @@
                                 <thead class="bg-light">
                                   <tr>
                                     <th>ID de usuario</th>
-                                    <th>Crn</th>
+                                    <th>Código</th>
                                     <th>Rol</th>
                                     <th>Acciones</th>
                                   </tr>

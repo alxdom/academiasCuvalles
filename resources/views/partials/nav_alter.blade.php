@@ -106,6 +106,7 @@
                         </ul>
                     </div> --}}
 
+                    @can('academiasAssign.index')
                     <li class="nav-item">
                         <a class="nav-link"  href="{{ url('academiasAssign') }}">
                             <p>
@@ -113,12 +114,13 @@
                             </p>
                         </a>
                     </li>
+                    @endcan
 
                     @can('roles.index')
                     <li class="nav-item">
                         <a class="nav-link"  href="{{ url('roles') }}">
                             <p>
-                                Roles
+                                Usuarios y Roles
                             </p>
                         </a>
                     </li>

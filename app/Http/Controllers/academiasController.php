@@ -15,6 +15,13 @@ use App\Services\SiiauServices;
 class academiasController extends Controller
 {
 
+    public function __construct(){
+
+        $this->middleware('permission:academiasAssign.index')->only(['index']);
+        $this->middleware('permission:academiasAssign.edit')->only(['edit', 'update']);
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
