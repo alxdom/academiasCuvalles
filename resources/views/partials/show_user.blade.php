@@ -2,5 +2,4 @@
 
     <span>{{Auth::user()->codigo}}<b class="caret"></b></span>
     
-
 </a>

@@ -17,11 +17,11 @@
     <link href="{!!asset('assets/css/light-bootstrap-dashboard.css?v=2.0.1')!!}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/18147cf313.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- NAVEGADOR-ASIDE -->
@@ -52,18 +52,21 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+    
     
     body{
         background-color: #f8f9fa;
         /* background-image: url(http://www.web.valles.udg.mx/sites/default/files/23157257_1909546689059928_8139742362001497134_o.jpg); */
         background-size: cover;
         background-repeat: no-repeat;
+        font-family: 'Montserrat', sans-serif
+        
     }
 
     .card{
-        -webkit-box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
-        -moz-box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
-        box-shadow: 10px 10px 27px -6px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); 
+        box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79);
     }
     .letra-titulo{
         font-family: 'Cormorant Garamond', serif;

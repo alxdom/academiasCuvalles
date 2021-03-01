@@ -27,9 +27,6 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'roles.update']);
         Permission::create(['name' => 'roles.destroy']);
 
-
-
-
         //Cargar evidencias
         Permission::create(['name' => 'evidencias.index']);
         Permission::create(['name' => 'evidencias.upload']);
@@ -49,10 +46,10 @@ class PermissionSeeder extends Seeder
 
         //SuperAdmin
         $superAdmin = Role::create(['name' => 'SuperAdmin']);
-        //Admin
+        //Presidente
         $presidente = Role::create(['name' => 'Presidente de academia']);
         //Academicos
-        $academic = Role::create(['name' => 'Academico']);
+        $academico = Role::create(['name' => 'Academico']);
 
 
         //ASIGNAR PERMISOS A LOS ROLES
@@ -61,14 +58,16 @@ class PermissionSeeder extends Seeder
             'roles.edit',
             'roles.update',
             'roles.destroy',
-        ]);
-
-        $admin->givePermissionTo([
             'academiasAssign.index',
             'academiasAssign.edit',
         ]);
 
-        $academic->givePermissionTo([
+        $presidente->givePermissionTo([
+            'academiasAssign.index',
+            'academiasAssign.edit',
+        ]);
+
+        $academico->givePermissionTo([
             'evidencias.index',
             'evidencias.upload',
             'programas.index',

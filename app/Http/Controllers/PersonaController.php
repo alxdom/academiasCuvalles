@@ -43,7 +43,7 @@ class PersonaController extends Controller
                     //Crear usuario
                     $user->save();
                     //Asignar rol a usuario
-                    $user->assignRole('Academic');
+                    $user->assignRole('Academico');
                     Auth::login($user);
                 }
                 return redirect()->route('home');

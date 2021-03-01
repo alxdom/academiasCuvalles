@@ -6,6 +6,13 @@ use GuzzleHttp\Client;
 
 
 Route::middleware(['auth'])->group(function () {
+
+
+
+
+
+
+
 //RUTA HOME
 Route::view('/home', 'home')->name('home');
 
@@ -24,9 +31,14 @@ Route::get('/actas', 'ActasController@index')->name('actas.index');//INDEX
 Route::get('/showactas', 'ActasController@ShowUploadActas')->name('actas.show');//INDEX
 // Route::post('/evidencias','EvidenciasController@uploadEvidencias')->name('upload');
 
-Route::resource('academiasAssign', 'academiasController');
 
-Route::resource('roles', 'RoleController');
+Route::group(['middleware' => ['permission:academiasAssign.index|academiasAssign.edit']], function () {
+    Route::resource('academiasAssign', 'academiasController');
+});
+
+Route::group(['middleware' => ['permission:roles.index|roles.create|roles.edit']], function () {
+    Route::resource('roles', 'RoleController');
+});
 
 });
 

@@ -15,12 +15,12 @@ use App\Services\SiiauServices;
 class academiasController extends Controller
 {
 
-    public function __construct(){
+    // public function __construct(){
 
-        $this->middleware('permission:academiasAssign.index')->only(['index']);
-        $this->middleware('permission:academiasAssign.edit')->only(['edit', 'update']);
+    //     $this->middleware('permission:academiasAssign.index')->only(['index']);
+    //     $this->middleware('permission:academiasAssign.edit')->only(['edit', 'update']);
         
-    }
+    // }
 
     /**
      * Display a listing of the resource.
@@ -32,7 +32,11 @@ class academiasController extends Controller
             //$id = '2952399'
             // $id = '2236079'
 
+            //Error al meter el constructor para proteger las rutasdd
+           
             $materias = $this->siiauServices->getMateriasPorProfesor($id);
+   
+            
             
             $academias = Academia::all();
 
