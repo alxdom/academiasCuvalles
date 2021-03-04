@@ -14,8 +14,9 @@ class ProgramasGuiasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = '2952399', Request $request)
+    public function index(Request $request)
     {
+        $id = '2952399';
         $materias = $this->siiauServices->getMateriasPorProfesor($id);
         
         $academias = Academia::all();

@@ -1,21 +1,10 @@
 @extends('layouts.main')
 @section('content')
 <div class="col-md-12">
-    
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="https://mdl.cuvalles.udg.mx/pluginfile.php/1/theme_fordson/slide1image/1605724155/banner1.jpg" alt="Portada del sitio web">
-              </div>
-        </div>
-      </div>
+  <div class="row">
+        <div class="card-deck col-sm-12">
 
-
-    <div class="row caja">
-    
-    <div class="row  ">
-        <div class="card-deck col-12 ">
-            <div class="card fondo-card">
+            <div class="card fondo-card col-sm-12">
                 <div class="card-header  p-3">
                     <h5 class="card-title">
                         <span style="color: #1864ab;">
@@ -23,13 +12,15 @@
                           </span>
                           Carga disponible
                     </h5>
-                </div>
-              <div class="card-body">
-                <p class="card-text text-muted">Si alguna materia o academia no te aparece contacta a un administrador.</p>
-              </div>
             </div>
 
-            <div class="card fondo-card">
+              <div class="card-body">
+                <p class="card-text text-muted">Si alguna materia o academia no te aparece contacta a un administrador.</p>
+                <a href="" type="button" class="btn btn-primary btn-outline">Comezar a subir mis evidencias</a>
+              </div>
+        </div>
+
+            <div class="card fondo-card col-sm-12">
                 <div class="card-header  p-3">
                     <h5 class="card-title">
                         <span style="color: #1864ab;">
@@ -51,7 +42,8 @@
               </div>
             </div>
 
-            <div class="card fondo-card">
+
+            <div class="card fondo-card col-sm-12">
                 <div class="card-header  p-3 white">
                     <h5 class="card-title">
                         <span style="color: #1864ab;">
@@ -64,29 +56,66 @@
                 <p class="card-text text-muted">{{Auth::user()->codigo}}</p>
               </div>
             </div>
-          </div>
-          
-          
+
+
+        </div>
     </div>
 
+    <div class="row">
+      <div class="card-deck col-12 ">
 
+          <div class="card fondo-card">
+              <div class="card-header  p-3">
+                  <h5 class="card-title">
+                      <span style="color: #1864ab;">
+                          <i class="fas fa-cloud-upload-alt"></i>
+                        </span>
+                        Mis materias
+                  </h5>
+          </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                    <thead class="bg-light">
+                      <tr>
+                        <th>NRC</th>
+                        <th>Código</th>
+                        <th>Clave</th>
+                        <th>Materia</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>asdasd</td>
+                        <td>asdasd</td>
+                        <td>asdsad</td>
+                        <td>asdasd</td>
+                        <td>asdasd</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+      </div>
+
+         
+
+
+      </div>
+  </div>
 </div>
 
+
 <style>
-.bg-udg{
-    background-image: url('https://mdl.cuvalles.udg.mx/pluginfile.php/1/theme_fordson/slide1image/1605724155/banner1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 15rem;
-    opacity: 0.8;
-    font-weight: 900;
+
+.banner{
+ 
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset -50px -50px 50px 50px rgba(0,0,0,0.51); 
+box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset -50px -50px 50px 50px rgba(0,0,0,0.51);
 }
-.title-cuv{
-    opacity: 1;
-    z-index: 111111;
-    background-color:#1864ab;
-    color: white;
-}
+
 .fondo{
     
     border-top: solid 3px #1864AB;
@@ -94,12 +123,11 @@
 }
 .fondo-card{
     color: #FFFFFF !important;
-    border-bottom: solid 5px #1864AB;
+    border-bottom: solid 5px #527B9B;
 }
 .caja{
-    
-    position: relative;
-    top: -58px;
+    /* position: relative; */
+    /* top: -58px; */
     justify-content:center;
     text-align: center;
 }

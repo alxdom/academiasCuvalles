@@ -31,9 +31,9 @@ class academiasController extends Controller
     {        //$id = Auth::user()->codigo;
             //$id = '2952399'
             // $id = '2236079'
+            
 
             //Error al meter el constructor para proteger las rutasdd
-           
             $materias = $this->siiauServices->getMateriasPorProfesor($id);
    
             

@@ -16,6 +16,7 @@
                                 <th>Código</th>
                                 <th>Clave</th>
                                 <th>Materia</th>
+                                <th>Academia</th>
                                 <th>Acciones</th>
                               </tr>
                             </thead>
@@ -30,11 +31,11 @@
                                   @foreach ($MATERIAS as $MATERIA)
                                       @if ($MATERIA->crn == $materia->nrc)
                                         @if ($MATERIA->academias_id == null)
-                                          <td><small><a href="{{ route('academiasAssign.edit', $MATERIA->crn )}}" type="button" class="btn btn-primary btn-sm">Asignar academia</a></small></td>
+                                          <td class="text-danger"><small>Sin academia...</small></td>
                                         @else
-                                          {{-- <td><small>{{$MATERIA->academia->nombre}}</small></td> --}}
-                                          <td><small><a href="{{ route('academiasAssign.edit', $MATERIA->crn )}}" type="button" class="btn btn-primary btn-sm">Asignar academia</a></small></td>
+                                          <td><small>{{$MATERIA->academia->nombre}}</small></td>
                                         @endif
+                                        <td><small><a href="{{ route('academiasAssign.edit', $MATERIA->crn )}}" type="button" class="btn btn-primary btn-sm">Asignar academia</a></small></td>
                                       @endif
                                   @endforeach
                                   

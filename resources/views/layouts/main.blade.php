@@ -65,8 +65,9 @@
     }
 
     .card{
-        -webkit-box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); 
-        box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79);
+        /* -webkit-box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); 
+        box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); */
+        box-shadow: 0 3px 28px rgba(0,0,0,0.16)
     }
     .letra-titulo{
         font-family: 'Cormorant Garamond', serif;

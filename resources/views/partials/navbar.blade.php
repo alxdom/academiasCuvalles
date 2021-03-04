@@ -26,6 +26,6 @@
 
 <style>
     .colorBG{
-        background-color: #1864ab;
+        background-color: #527B9B;
     }
 </style>
