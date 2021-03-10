@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Materia;
 use App\Academia;
+use Auth;
 
 class EvidenciasController extends Controller
 {
@@ -14,18 +15,20 @@ class EvidenciasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = '2952399', Request $request)
+    public function index(Request $request)
     {
+
+        $id = '2236079';
         //$id = Auth::user()->codigo;
         //$id = '2952399'
         // $id = '2236079'
         // 2709139
-
-        $materias = $this->siiauServices->getMateriasPorProfesor($id);
+        // $foto = 'http://148.202.89.89/Fotos/' . Auth::user()->codigo . 'jpg';
+        $foto = 'http://148.202.89.89/Fotos/2236079.jpg';
         
+        $materias = $this->siiauServices->getMateriasPorProfesor($id); 
         $academias = Academia::all();
         
-
         $nombreAcademia = $request->get('buscarpor');
         $dbMaterias = Materia::where('academias_id', 'like', "%$nombreAcademia%")->get();
         

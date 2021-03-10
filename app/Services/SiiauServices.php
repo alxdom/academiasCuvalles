@@ -23,6 +23,10 @@ class SiiauServices{
         return $this->makeRequest('GET', "api_horarios/materias_profesor/{$id}");
     }
 
+    // public function getMaterias(){
+    //     return $this->makeRequest('GET', "api_horarios/materias");
+    // }
+
 
     public function getMateriasNRC($id){
         $materias = $this->makeRequest('GET', "api_horarios/materias_profesor/{$id}");

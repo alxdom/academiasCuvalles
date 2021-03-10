@@ -15,29 +15,19 @@ use App\Services\SiiauServices;
 class academiasController extends Controller
 {
 
-    // public function __construct(){
-
-    //     $this->middleware('permission:academiasAssign.index')->only(['index']);
-    //     $this->middleware('permission:academiasAssign.edit')->only(['edit', 'update']);
-        
-    // }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = '2236079')
+    public function index()
     {        //$id = Auth::user()->codigo;
             //$id = '2952399'
             // $id = '2236079'
             
-
-            //Error al meter el constructor para proteger las rutasdd
+            $id = '2236079';
             $materias = $this->siiauServices->getMateriasPorProfesor($id);
    
-            
-            
             $academias = Academia::all();
 
             $MATERIAS = Materia::all();
@@ -116,18 +106,22 @@ class academiasController extends Controller
         return redirect('/academiasAssign'); 
     }
 
-    // public function logeo(){
-    //     try {
-    //         $client = new Client([
-    //             'base_uri' => 'http://148.202.89.11/d_alum/api/',
-    //             'timeout'  => 2.0,001
-    //         ]);
-    //     } catch (\Throwable $th) {
-            
-    // }
-    //     $response = $client->request('POST', 'login?codigo=214332855&pass=alextintor');
-    //     $siiau = json_decode( $response->getBody()->getContents());
-    //     return $siiau;
-    //     //return view('materias');
-    // }
+    public function Home(Request $request)
+    {
+        
+        $id = '2236079';
+        $foto = 'http://148.202.89.89/Fotos/2236079.jpg';
+        
+        $materias = $this->siiauServices->getMateriasPorProfesor($id); 
+        $academias = Academia::all();
+        
+        $nombreAcademia = $request->get('buscarpor');
+        $dbMaterias = Materia::where('academias_id', 'like', "%$nombreAcademia%")->get();
+        
+        return view('home')->with([
+            'materias' => $materias,
+            'academias' => $academias,
+            'dbMaterias' => $dbMaterias,
+        ]); 
+    }
 }

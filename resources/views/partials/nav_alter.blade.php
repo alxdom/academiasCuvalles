@@ -2,31 +2,8 @@
     <div class="sidebar fondo-sidebar">
         <div class="sidebar-wrapper" >
             {{-- style="background: #74c0fc!important;" --}}
-            <div class="user" >
-                <div class="photo">
-                    <img src="../assets/img/default-avatar.png" />
-                </div>
-                <div class="info" >
-
-                   <!-- info-user -->
-                   @include('partials.show_user')
-                    <!-- END-info-user -->
-        
-                    <div class="collapse" id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                                <a class="profile-dropdown" href="#">
-                                    
-                                    <span class="sidebar-normal">Mi perfil</span>
-
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+            
+            @include('partials.show_user')
             <ul class="nav">
                 
                 {{-- <div class=" align-self-center text-center apartado"> --}}
