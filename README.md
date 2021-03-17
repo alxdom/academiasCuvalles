@@ -94,7 +94,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - [2- colocar el siguiente comando "SET COMPOSER_MEMORY_LIMIT= -1]
 - [3- dentro de la configuracion de xammp quitar el comentario en el archivo php.ini ";extension=soap" => "extension.soap"]
 - [4- en la cosola de comando colocar el siguiente codigo "composer require spatie/laravel-permission]
-- [5- dentro de la carpeta config/app.php del proyecto colocar dentro de provider la siguiente informacion "Spatie\PermissionServiceProvider::class"]
+- [5- dentro de la carpeta config/app.php del proyecto colocar dentro de provider la siguiente informacion "Spatie\Permission\PermissionServiceProvider::class"]
 - [6- en la consola de comandos colocar estos dos comandos :
     php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
     php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"]
