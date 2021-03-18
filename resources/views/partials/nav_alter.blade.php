@@ -20,6 +20,13 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="{{ route('Academias.index') }}">
+                        <p>
+                            Academias
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#componentsExamples">

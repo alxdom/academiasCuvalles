@@ -94,3 +94,35 @@ p {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
+body {
+    background-color: #f8f9fa;
+    /* background-image: url(http://www.web.valles.udg.mx/sites/default/files/23157257_1909546689059928_8139742362001497134_o.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif
+
+}
+
+.card {
+    /* -webkit-box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79);
+    box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); */
+    box-shadow: 0 3px 28px rgba(0, 0, 0, 0.16)
+}
+
+.letra-titulo {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.letra-titulo-2 {
+    font-family: 'Merriweather', serif;
+}
+
+.letra-titulo-3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');

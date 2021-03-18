@@ -29,21 +29,27 @@
 @include('partials.nav_alter')
 <!-- FIN-NAVEGADOR-ASIDE -->
 <div class="main-panel">
-  <!-- NAVBAR -->
-@include('partials.navbar')
+
+<!-- NAVBAR -->
+  @include('partials.navbar')
 <!-- FIN-NAVBAR -->
-@yield('jumbo')
+  @yield('jumbo')
 <!-- CONTENT -->
-  @yield('content')
-
-
+  @if (session('status'))
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-success">
+          <span>{{ session('status') }}</span>
         </div>
       </div>
     </div>
-  </div>
-  <!-- END-CONTENT -->
+  @endif
+  @yield('content')
+
+
+<!-- END-CONTENT -->
   @include('partials.footer')
-</div>
+
 </div>
 </body>
 
@@ -53,32 +59,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
 
 
-    body {
-        background-color: #f8f9fa;
-        /* background-image: url(http://www.web.valles.udg.mx/sites/default/files/23157257_1909546689059928_8139742362001497134_o.jpg); */
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-family: 'Montserrat', sans-serif
-
-    }
-
-    .card {
-        /* -webkit-box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); 
-        box-shadow: 7px 6px 12px -6px rgba(0,0,0,0.79); */
-        box-shadow: 0 3px 28px rgba(0, 0, 0, 0.16)
-    }
-
-    .letra-titulo {
-        font-family: 'Cormorant Garamond', serif;
-    }
-
-    .letra-titulo-2 {
-        font-family: 'Merriweather', serif;
-    }
-
-    .letra-titulo-3 {
-        font-family: 'Montserrat', sans-serif;
-    }
 </style>
 
 <!--   Core JS Files   -->
