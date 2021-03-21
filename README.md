@@ -76,3 +76,29 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## Pasos para integracion del proyecto.
+- [1- git Clone]
+- [2- composer install]
+- [3- copear .env.example y pegar y dejar con el nombre .env]
+- [4- en la consola de comando cologar el siguiente comando "php artisan key:generate"]
+- [5- crear el nombre de la base de datos en su gestor]
+- [6.- colocar la configuracion de su base de datos en el archivo .env]
+
+
+## una vez integrado el proyecto proseguimos a configurarlo
+
+- [1- colocar dentro del archivo ".env" la url base de siiau = "SIIAU_BASE_URI= http://148.20289.11"]
+- [2- colocar el siguiente comando "SET COMPOSER_MEMORY_LIMIT= -1]
+- [3- dentro de la configuracion de xammp quitar el comentario en el archivo php.ini ";extension=soap" => "extension.soap"]
+- [4- en la cosola de comando colocar el siguiente codigo "composer require spatie/laravel-permission]
+- [5- dentro de la carpeta config/app.php del proyecto colocar dentro de provider la siguiente informacion "Spatie\Permission\PermissionServiceProvider::class"]
+- [6- en la consola de comandos colocar estos dos comandos :
+    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"]
+- [7-dentro de la carpeta database/seeds buscar el archivo UserSeeder.php y cambiar las credenciales para el usuario]
+- [8- colocar el siguiente comando para generar las migraciones "php artisan migrate --seed"]
+
+
