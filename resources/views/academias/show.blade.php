@@ -14,15 +14,17 @@
                   <hr>
                   <div class="table-responsive">
                     <div class="col-12 text-right">
-                      <a href="{{route('Academias.create')}}" class="btn btn-sm btn-primary">{{__('crear academia')}}</a>
+                      <a href="{{route('Academias.create')}}"
+                         class="btn btn-sm btn-primary">{{__('crear academia')}}</a>
                     </div>
-                    <table class="table my-5">
-                      <thead class="bg-light">
+
+                    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+                           width="100%">
+                      <thead>
                       <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Acciones</th>
-                      </tr>
+                        <th class="th-sm">{{__('ID')}}</th>
+                        <th class="th-sm">{{__('Nombre')}}</th>
+                        <th class="th-sm">{{__('Acciones')}}</tr>
                       </thead>
                       <tbody>
                       @foreach ($academias as $academia)
@@ -34,13 +36,24 @@
                                data-toggle="modal" data-target="#deleteModal" data-id="{{$academia->id}}">
                               <i class="fa fa-remove"></i>
                             </a>
-                            <a rel="tooltip"  class="btn btn-link btn-warning table-action edit" href="{{route('Academias.edit',$academia->id)}}">
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit"
+                               href="{{route('Academias.edit',$academia->id)}}">
                               <i class="fa fa-edit"></i>
                             </a>
                           </td>
                         </tr>
                       @endforeach
                       </tbody>
+                      <tfoot>
+                      <tr>
+                        <th>{{__('ID')}}
+                        </th>
+                        <th>{{__('Nombre')}}
+                        </th>
+                        <th>{{__('Acciones')}}
+                        </th>
+                      </tr>
+                      </tfoot>
                     </table>
                   </div>
 
