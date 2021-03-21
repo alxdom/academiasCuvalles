@@ -26,11 +26,12 @@
             <span style="color: #1864ab;">
               <i class="fas fa-user-tag"></i>
             </span>
-            Tipo de usuario
+            Información de usuario
           </h5>
         </div>
         <div class="card-body">
           <p class="card-text text-muted">
+            {{Auth::user()->codigo}} <br>
             @if(@Auth::user()->hasRole('Academico'))
             Academico
             @elseif(@Auth::user()->hasRole('Presidente de academia'))
@@ -43,19 +44,19 @@
       </div>
 
 
-      <div class="card fondo-card col-sm-12">
+      {{-- <div class="card fondo-card col-sm-12">
         <div class="card-header  p-3 white">
           <h5 class="card-title">
             <span style="color: #1864ab;">
               <i class="fas fa-user"></i>
             </span>
-            Código de usuario
+            Usuarios en línea
           </h5>
         </div>
         <div class="card-body">
-          <p class="card-text text-muted">{{Auth::user()->codigo}}</p>
+          
         </div>
-      </div>
+      </div> --}}
 
 
     </div>

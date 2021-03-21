@@ -102,23 +102,46 @@
                         </a>
                     </li>
                     @endcan
+                    <hr align="left" noshade="noshade" size="2" />
+                    <li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#">
+                                <p>
+                                    Usuarios en línea (prototipo)
+                                </p>
+                                <ul class="usuarios-en-linea">
+                                    <li>Pedro</li>
+                                    <li>Juan</li>
+                                    <li>Matias</li>
+                                </ul>
+                            </a>
+                        </li>
+                    </li>
             </ul>
+            
         </div>
     </div>
 
     <style>
-        .apartado{
-        
-            padding: 0.5rem;
-        }
-        .fondo-sidebar{
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3b679e+0,2b88d9+50,207cca+51,7db9e8+100;Blue+Gloss+%232 */
-background: rgb(59,103,158); /* Old browsers */
-background: -moz-linear-gradient(45deg, rgba(59,103,158,1) 0%, rgba(43,136,217,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-        }
+    .apartado{
+        padding: 0.5rem;
+    }
+    .fondo-sidebar{
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3b679e+0,2b88d9+50,207cca+51,7db9e8+100;Blue+Gloss+%232 */
+        background: rgb(59,103,158); /* Old browsers */
+        background: -moz-linear-gradient(45deg, rgba(59,103,158,1) 0%, rgba(43,136,217,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .usuarios-en-linea ul{
+        list-style: none !important; /* Quitamos los marcadores */
+        padding: 0; /* Quitamos el padding por defecto de la lista */
+        margin-left: 10px; /* Separamos la lista de la izquierda */
+    }
+    .usuarios-en-linea li::before{
+        content: "\2022"; /* Insertamos el marcador */
+        padding-right: 8px; /* Establecemos el espacio entre las viñetas y el list item */
+        color: green; /* Coloreamos la viñeta */
+    }
     </style>
