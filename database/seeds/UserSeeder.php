@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     {
         App\User::create([
             'codigo'      => '214508406',
-            'pass'     => bcrypt('pragmatn64'),
+            'pass'     => bcrypt('pragmant64'),
         ]);
     }
 }

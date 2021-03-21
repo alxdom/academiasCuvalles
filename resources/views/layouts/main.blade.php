@@ -12,6 +12,10 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
   <!-- CSS Files -->
   <link href="{!! asset('assets/css/bootstrap.min.css')!!}" rel="stylesheet"/>
   <link href="{!! asset('assets/css/styles.css')!!}" rel="stylesheet"/>
@@ -107,5 +111,5 @@
         demo.showNotification();
     });
 </script>-->
-
+<script src="../assets/js/tableAcademias.js"></script>
 </html>
