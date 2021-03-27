@@ -7,10 +7,10 @@
           <div class="col-md-9 mx-auto">
             <div class="card">
               <div class="card-body">
-                <h3>{{__('Academias')}}</h3>
-                <form method="POST" action="{{route('academias.update', $academia->id)}}" accept-charset="UTF-8" enctype="multipart/form-data">
-                  @method('PUT')
-                  @include('academias._form')
+                <h3>{{__('Ciclo')}}</h3>
+                <form method="POST" action="{{route('ciclos.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                  @include('ciclos._form')
                 </form>
 
               </div>

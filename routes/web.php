@@ -7,7 +7,8 @@ use GuzzleHttp\Client;
 Route::middleware(['auth'])->group(function () {
 
   Route::get('/home', 'academiasController@home')->name('home');
-  Route::resource('Academias', 'academiasCrudController');
+  Route::resource('academias', 'AcademiasCrudController');
+  Route::resource('ciclos', 'CiclosController');
 
 
   Route::group(['middleware' => ['permission:academiasAssign.index|academiasAssign.edit']], function () {

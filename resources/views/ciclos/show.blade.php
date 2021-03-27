@@ -14,8 +14,8 @@
                   <hr>
                   <div class="table-responsive">
                     <div class="col-12 text-right">
-                      <a href="{{route('academias.create')}}"
-                         class="btn btn-sm btn-primary">{{__('crear academia')}}</a>
+                      <a href="{{route('ciclos.create')}}"
+                         class="btn btn-sm btn-primary">{{__('crear Ciclo')}}</a>
                     </div>
 
                     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0"
@@ -23,21 +23,21 @@
                       <thead>
                       <tr>
                         <th class="th-sm">{{__('ID')}}</th>
-                        <th class="th-sm">{{__('Nombre')}}</th>
+                        <th class="th-sm">{{__('Ciclo')}}</th>
                         <th class="th-sm">{{__('Acciones')}}</tr>
                       </thead>
                       <tbody>
-                      @foreach ($academias as $academia)
+                      @foreach ($ciclos as $ciclo)
                         <tr>
-                          <td>{{$academia->id}}</td>
-                          <td>{{$academia->nombre}}</td>
+                          <td>{{$ciclo->id}}</td>
+                          <td>{{$ciclo->ciclo}}</td>
                           <td>
                             <a rel="tooltip" class="btn btn-link btn-danger table-action remove-user"
-                               data-toggle="modal" data-target="#deleteModal" data-id="{{$academia->id}}">
+                               data-toggle="modal" data-target="#deleteModal" data-id="{{$ciclo->id}}">
                               <i class="fa fa-remove"></i>
                             </a>
                             <a rel="tooltip" class="btn btn-link btn-warning table-action edit"
-                               href="{{ route('academias.edit', $academia->id) }}">
+                               href="{{ route('ciclos.edit' , $ciclo->id)}} ">
                               <i class="fa fa-edit"></i>
                             </a>
                           </td>
@@ -48,7 +48,7 @@
                       <tr>
                         <th>{{__('ID')}}
                         </th>
-                        <th>{{__('Nombre')}}
+                        <th>{{__('Ciclo')}}
                         </th>
                         <th>{{__('Acciones')}}
                         </th>
@@ -86,8 +86,8 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Cerrar')}}</button>
 
-          <form id="formDelete" method="POST" action="{{ route('academias.destroy',0) }}"
-                data-action="{{ route('academias.destroy',0) }}">
+          <form id="formDelete" method="POST" action="{{ route('ciclos.destroy',0) }}"
+                data-action="{{ route('ciclos.destroy',0) }}">
             @method('DELETE')
             @csrf
             <button type="submit" class="btn btn-danger">{{__('Borrar')}}</button>
