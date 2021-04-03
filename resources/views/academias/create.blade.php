@@ -8,7 +8,7 @@
             <div class="card">
               <div class="card-body">
                 <h3>{{__('Academias')}}</h3>
-                <form method="POST" action="{{route('Academias.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                <form method="POST" action="{{route('academias.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
                   {{ csrf_field() }}
                   @include('academias._form')
                 </form>

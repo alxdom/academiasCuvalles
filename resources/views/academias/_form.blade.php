@@ -10,7 +10,6 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
-
 </div>
 @if($isEdit)<button type="submit" class="btn btn-primary">editar</button>
 @else <button type="submit" class="btn btn-primary">crear</button>@endif
